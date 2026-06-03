@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Fondo transparente por defecto, el icono usa tu dorado #c8a97a -->
+  <!-- Humito / Vapor de la mañana -->
+  <path d="M13,5 C13,3 14,3 14,1 M17,6 C17,4 18,4 18,2" stroke="#c8a97a" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Cuerpo de la taza -->
+  <path d="M8,9 L20,9 C20,17 19,21 14,21 L14,21 C9,21 8,17 8,9 Z" fill="none" stroke="#c8a97a" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Asa de la taza -->
+  <path d="M20,11 C23,11 24,12 24,14 C24,16 23,17 20,17" fill="none" stroke="#c8a97a" stroke-width="2" stroke-linecap="round"/>
+  <!-- Platito de base -->
+  <line x1="6" y1="25" x2="22" y2="25" stroke="#c8a97a" stroke-width="2" stroke-linecap="round"/>
+</svg>
