@@ -12,7 +12,10 @@
 
   <nav class="nav">
     <a href="index.html" class="nav-logo">La <span>Mañanera</span></a>
-    <ul class="nav-links">
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html#menu">Menú</a></li>
       <li><a href="index.html#nosotros">Nosotros</a></li>
       <li><a href="ubicacion.html">¿Dónde estamos?</a></li>
@@ -94,6 +97,13 @@
       btn.style.display = 'none';
       document.getElementById('formOk').style.display = 'block';
     }
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
   </script>
 
 </body>

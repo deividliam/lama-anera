@@ -13,9 +13,12 @@
   <!-- NAVBAR -->
   <nav class="nav">
     <div class="nav-logo">La <span>Mañanera</span></div>
-    <ul class="nav-links">
-      <li><a href="#menu">Menú</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#menu" onclick="closeMenu()">Menú</a></li>
+      <li><a href="#nosotros" onclick="closeMenu()">Nosotros</a></li>
       <li><a href="ubicacion.html">¿Dónde estamos?</a></li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
@@ -262,8 +265,7 @@
     <div class="about-text">
       <span class="about-label">Nuestra historia</span>
       <h2 class="about-heading">Más que café,<br>un ritual de la mañana</h2>
-      <p class="about-body">La Mañanera nació de una apuesta. Don Héctor, panadero de Cerro Alegre por treinta años, le dijo a su nieto Matías que el café era "agua sucia con pretensiones" — y Matías, en lugar de discutir, le preparó un espresso de origen etíope con los granos que había traído de un viaje a Colombia. Don Héctor lo tomó en silencio, dejó la taza vacía sobre la mesa, y después de un momento que pareció eterno dijo: "ya po, pongamos una cafetería." Nunca más volvió a llamarle agua sucia.
-</p>
+      <p class="about-body">Nacimos en 2019 con una idea simple: que el café bueno no debería ser difícil de encontrar. Cada taza se prepara con granos tostados a la semana, seleccionados directamente desde cooperativas de Colombia y Etiopía.</p>
     </div>
     <div class="about-hours" id="horarios">
       <span class="about-label">Horarios</span>
@@ -322,6 +324,19 @@
   });
 
   searchInput.addEventListener('input', filterMenu);
+</script>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  });
+  function closeMenu() {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('active');
+  }
 </script>
 
 </body>
