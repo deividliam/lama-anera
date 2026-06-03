@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Mañanera — Café de Especialidad</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-logo">La <span>Mañanera</span></div>
+    <ul class="nav-links">
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="ubicacion.html">¿Dónde estamos?</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-tag">Café de especialidad · Valparaíso</p>
+    <h1 class="hero-title">El sabor que<br><em>despierta</em> tu día</h1>
+    <p class="hero-sub">Tostado artesanal · Origen único · Desde 2019</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">Ver menú</a>
+      <a href="#nosotros" class="btn-secondary">Nuestra historia</a>
+    </div>
+  </section>
+
+  <!-- MENÚ -->
+  <section class="section" id="menu">
+    <h2 class="section-title">Nuestro menú</h2>
+    <div class="section-line"></div>
+
+    <!-- BUSCADOR -->
+    <div class="menu-search-wrap">
+      <input type="text" id="menuSearch" class="menu-search" placeholder="Buscar en el menú..." />
+    </div>
+
+    <!-- FILTROS -->
+    <div class="menu-filters">
+      <button class="filter-btn active" data-cat="todos">Todos</button>
+      <button class="filter-btn" data-cat="cafes">Cafés</button>
+      <button class="filter-btn" data-cat="tes">Tés</button>
+      <button class="filter-btn" data-cat="postres">Postres</button>
+      <button class="filter-btn" data-cat="tortas">Tortas</button>
+      <button class="filter-btn" data-cat="salados">Salados</button>
+    </div>
+
+    <!-- SIN RESULTADOS -->
+    <p class="menu-empty" id="menuEmpty" style="display:none;">No se encontraron productos.</p>
+
+    <!-- GRID DE PRODUCTOS -->
+    <div class="menu-grid" id="menuGrid">
+
+      <!-- CAFÉS -->
+      <div class="menu-card" data-cat="cafes">
+        <div class="menu-icon">☕</div>
+        <p class="menu-name">Espresso</p>
+        <p class="menu-desc">Blend etíope, notas a frutas rojas y cacao amargo.</p>
+        <span class="menu-price">$2.200</span>
+      </div>
+      <div class="menu-card" data-cat="cafes">
+        <div class="menu-icon">🥛</div>
+        <p class="menu-name">Latte de avena</p>
+        <p class="menu-desc">Doble shot con leche de avena y vainilla natural.</p>
+        <span class="menu-price">$3.500</span>
+      </div>
+      <div class="menu-card" data-cat="cafes">
+        <div class="menu-icon">☕</div>
+        <p class="menu-name">Cappuccino</p>
+        <p class="menu-desc">Espresso, leche vaporizada y espuma sedosa. Clásico.</p>
+        <span class="menu-price">$3.000</span>
+      </div>
+      <div class="menu-card" data-cat="cafes">
+        <div class="menu-icon">🧊</div>
+        <p class="menu-name">Cold brew <span class="badge-new">nuevo</span></p>
+        <p class="menu-desc">Infusión en frío por 18 horas, suave y sin acidez.</p>
+        <span class="menu-price">$3.800</span>
+      </div>
+      <div class="menu-card" data-cat="cafes">
+        <div class="menu-icon">☕</div>
+        <p class="menu-name">Flat white</p>
+        <p class="menu-desc">Ristretto doble con microespuma de leche entera.</p>
+        <span class="menu-price">$3.200</span>
+      </div>
+      <div class="menu-card" data-cat="cafes">
+        <div class="menu-icon">🍫</div>
+        <p class="menu-name">Mocca</p>
+        <p class="menu-desc">Espresso con chocolate belga y leche vaporizada.</p>
+        <span class="menu-price">$3.600</span>
+      </div>
+      <div class="menu-card" data-cat="cafes">
+        <div class="menu-icon">☕</div>
+        <p class="menu-name">Americano</p>
+        <p class="menu-desc">Espresso alargado con agua caliente. Simple y directo.</p>
+        <span class="menu-price">$2.500</span>
+      </div>
+
+      <!-- TÉS -->
+      <div class="menu-card" data-cat="tes">
+        <div class="menu-icon">🍵</div>
+        <p class="menu-name">Té matcha latte</p>
+        <p class="menu-desc">Matcha ceremonial japonés con leche de avena tibia.</p>
+        <span class="menu-price">$3.900</span>
+      </div>
+      <div class="menu-card" data-cat="tes">
+        <div class="menu-icon">🌸</div>
+        <p class="menu-name">Té de rosas</p>
+        <p class="menu-desc">Pétalos secos con hibisco y un toque de miel natural.</p>
+        <span class="menu-price">$2.800</span>
+      </div>
+      <div class="menu-card" data-cat="tes">
+        <div class="menu-icon">🍵</div>
+        <p class="menu-name">Chai latte</p>
+        <p class="menu-desc">Mezcla de especias indias con leche vaporizada y canela.</p>
+        <span class="menu-price">$3.500</span>
+      </div>
+      <div class="menu-card" data-cat="tes">
+        <div class="menu-icon">🌿</div>
+        <p class="menu-name">Té verde sencha</p>
+        <p class="menu-desc">Hoja entera de origen japonés, herbáceo y fresco.</p>
+        <span class="menu-price">$2.500</span>
+      </div>
+      <div class="menu-card" data-cat="tes">
+        <div class="menu-icon">🍋</div>
+        <p class="menu-name">Té negro con jengibre</p>
+        <p class="menu-desc">Assam robusto con jengibre fresco rallado y limón.</p>
+        <span class="menu-price">$2.700</span>
+      </div>
+      <div class="menu-card" data-cat="tes">
+        <div class="menu-icon">🍵</div>
+        <p class="menu-name">Rooibos vainilla <span class="badge-new">nuevo</span></p>
+        <p class="menu-desc">Sin cafeína, dulce de forma natural con vainilla de Madagascar.</p>
+        <span class="menu-price">$2.900</span>
+      </div>
+
+      <!-- POSTRES -->
+      <div class="menu-card" data-cat="postres">
+        <div class="menu-icon">🧁</div>
+        <p class="menu-name">Muffin del día</p>
+        <p class="menu-desc">Receta rotativa según temporada, sin conservantes.</p>
+        <span class="menu-price">$2.900</span>
+      </div>
+      <div class="menu-card" data-cat="postres">
+        <div class="menu-icon">🍪</div>
+        <p class="menu-name">Cookie de chocolate</p>
+        <p class="menu-desc">Mantequilla francesa, chips belgas y sal de mar en el borde.</p>
+        <span class="menu-price">$1.800</span>
+      </div>
+      <div class="menu-card" data-cat="postres">
+        <div class="menu-icon">🥐</div>
+        <p class="menu-name">Croissant de mantequilla</p>
+        <p class="menu-desc">Masa hojaldrada artesanal, crujiente por fuera, suave adentro.</p>
+        <span class="menu-price">$2.500</span>
+      </div>
+      <div class="menu-card" data-cat="postres">
+        <div class="menu-icon">🍮</div>
+        <p class="menu-name">Flan de vainilla</p>
+        <p class="menu-desc">Receta casera con caramelo oscuro y crema fresca.</p>
+        <span class="menu-price">$3.200</span>
+      </div>
+      <div class="menu-card" data-cat="postres">
+        <div class="menu-icon">🍩</div>
+        <p class="menu-name">Brownie húmedo</p>
+        <p class="menu-desc">Chocolate 70% con nueces tostadas. Servido tibio.</p>
+        <span class="menu-price">$3.000</span>
+      </div>
+      <div class="menu-card" data-cat="postres">
+        <div class="menu-icon">🍓</div>
+        <p class="menu-name">Cheesecake de berries</p>
+        <p class="menu-desc">Base de galleta, relleno cremoso y coulis de frambuesa.</p>
+        <span class="menu-price">$4.200</span>
+      </div>
+
+      <!-- TORTAS -->
+      <div class="menu-card" data-cat="tortas">
+        <div class="menu-icon">🎂</div>
+        <p class="menu-name">Torta de zanahoria</p>
+        <p class="menu-desc">Húmeda, con frosting de queso crema y nueces.</p>
+        <span class="menu-price">$4.500</span>
+      </div>
+      <div class="menu-card" data-cat="tortas">
+        <div class="menu-icon">🍰</div>
+        <p class="menu-name">Mil hojas de manjar</p>
+        <p class="menu-desc">Capas crujientes con manjar blanco artesanal y azúcar flor.</p>
+        <span class="menu-price">$4.800</span>
+      </div>
+      <div class="menu-card" data-cat="tortas">
+        <div class="menu-icon">🍫</div>
+        <p class="menu-name">Torta de chocolate</p>
+        <p class="menu-desc">Tres capas de bizcocho con ganache y frambuesas frescas.</p>
+        <span class="menu-price">$5.200</span>
+      </div>
+      <div class="menu-card" data-cat="tortas">
+        <div class="menu-icon">🍋</div>
+        <p class="menu-name">Torta de limón</p>
+        <p class="menu-desc">Bizcocho esponjoso con crema de limón y merengue italiano.</p>
+        <span class="menu-price">$4.600</span>
+      </div>
+      <div class="menu-card" data-cat="tortas">
+        <div class="menu-icon">🍰</div>
+        <p class="menu-name">Selva negra <span class="badge-new">nuevo</span></p>
+        <p class="menu-desc">Chantilly, cerezas maceradas y chocolate amargo rallado.</p>
+        <span class="menu-price">$5.500</span>
+      </div>
+      <div class="menu-card" data-cat="tortas">
+        <div class="menu-icon">🎂</div>
+        <p class="menu-name">Torta de maracuyá</p>
+        <p class="menu-desc">Mousse tropical sobre base de galleta y coco rallado.</p>
+        <span class="menu-price">$4.900</span>
+      </div>
+
+      <!-- SALADOS -->
+      <div class="menu-card" data-cat="salados">
+        <div class="menu-icon">🍞</div>
+        <p class="menu-name">Tostada artesanal</p>
+        <p class="menu-desc">Pan de masa madre con palta y tomate cherry.</p>
+        <span class="menu-price">$4.800</span>
+      </div>
+      <div class="menu-card" data-cat="salados">
+        <div class="menu-icon">🥪</div>
+        <p class="menu-name">Sándwich de pavo</p>
+        <p class="menu-desc">Ciabatta con pavo ahumado, rúcula, queso brie y mostaza.</p>
+        <span class="menu-price">$5.500</span>
+      </div>
+      <div class="menu-card" data-cat="salados">
+        <div class="menu-icon">🧀</div>
+        <p class="menu-name">Tostada de queso de cabra</p>
+        <p class="menu-desc">Pan de centeno con queso de cabra, miel y nueces.</p>
+        <span class="menu-price">$4.200</span>
+      </div>
+      <div class="menu-card" data-cat="salados">
+        <div class="menu-icon">🥚</div>
+        <p class="menu-name">Bowl de huevo revuelto</p>
+        <p class="menu-desc">Huevo orgánico, espinacas salteadas y tostadas integrales.</p>
+        <span class="menu-price">$5.800</span>
+      </div>
+      <div class="menu-card" data-cat="salados">
+        <div class="menu-icon">🥗</div>
+        <p class="menu-name">Wrap de pollo</p>
+        <p class="menu-desc">Pollo a la plancha, lechuga, tomate y salsa de yogur.</p>
+        <span class="menu-price">$5.200</span>
+      </div>
+      <div class="menu-card" data-cat="salados">
+        <div class="menu-icon">🫓</div>
+        <p class="menu-name">Focaccia del día <span class="badge-new">nuevo</span></p>
+        <p class="menu-desc">Receta cambia según ingredientes de temporada.</p>
+        <span class="menu-price">$3.900</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section class="about" id="nosotros">
+    <div class="about-text">
+      <span class="about-label">Nuestra historia</span>
+      <h2 class="about-heading">Más que café,<br>un ritual de la mañana</h2>
+      <p class="about-body">La Mañanera nació de una apuesta. Don Héctor, panadero de Cerro Alegre por treinta años, le dijo a su nieto Matías que el café era "agua sucia con pretensiones" — y Matías, en lugar de discutir, le preparó un espresso de origen etíope con los granos que había traído de un viaje a Colombia. Don Héctor lo tomó en silencio, dejó la taza vacía sobre la mesa, y después de un momento que pareció eterno dijo: "ya po, pongamos una cafetería." Nunca más volvió a llamarle agua sucia.
+</p>
+    </div>
+    <div class="about-hours" id="horarios">
+      <span class="about-label">Horarios</span>
+      <div class="hours">
+        <div class="hour-row"><span>Lunes – Viernes</span><strong>7:30 – 20:00</strong></div>
+        <div class="hour-row"><span>Sábado</span><strong>8:00 – 18:00</strong></div>
+        <div class="hour-row"><span>Domingo</span><strong>Cerrado</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACTO -->
+  <footer class="footer" id="contacto">
+    <div class="footer-logo">La <span>Mañanera</span></div>
+    <p class="footer-sub">Cerro Alegre 341 · Valparaíso</p>
+    <p class="footer-sub">@lamananeracafe · contacto@lamananeracafe.cl</p>
+  </footer>
+
+
+<script>
+  const cards = document.querySelectorAll('.menu-card');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const searchInput = document.getElementById('menuSearch');
+  const emptyMsg = document.getElementById('menuEmpty');
+
+  let currentCat = 'todos';
+
+  function filterMenu() {
+    const query = searchInput.value.toLowerCase().trim();
+    let visible = 0;
+
+    cards.forEach(card => {
+      const cat = card.dataset.cat;
+      const text = card.innerText.toLowerCase();
+      const matchCat = currentCat === 'todos' || cat === currentCat;
+      const matchSearch = query === '' || text.includes(query);
+
+      if (matchCat && matchSearch) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    emptyMsg.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCat = btn.dataset.cat;
+      filterMenu();
+    });
+  });
+
+  searchInput.addEventListener('input', filterMenu);
+</script>
+
+</body>
+</html>

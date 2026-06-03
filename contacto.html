@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — La Mañanera</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">La <span>Mañanera</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#menu">Menú</a></li>
+      <li><a href="index.html#nosotros">Nosotros</a></li>
+      <li><a href="ubicacion.html">¿Dónde estamos?</a></li>
+      <li><a href="contacto.html" class="nav-active">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section class="inner-hero">
+    <p class="hero-tag">Estamos para ayudarte</p>
+    <h1 class="inner-title"><em>Escríbenos</em> cuando quieras</h1>
+  </section>
+
+  <section class="inner-section">
+    <div class="contacto-grid">
+
+      <!-- CANALES DIRECTOS -->
+      <div class="contacto-canales">
+
+        <a href="https://wa.me/56912345678" target="_blank" class="canal-card canal-wp">
+          <span class="canal-icon">💬</span>
+          <div>
+            <p class="canal-nombre">WhatsApp</p>
+            <p class="canal-detalle">+56 9 1234 5678</p>
+          </div>
+          <span class="canal-arrow">→</span>
+        </a>
+
+        <a href="mailto:contacto@lamananeracafe.cl" class="canal-card canal-mail">
+          <span class="canal-icon">✉️</span>
+          <div>
+            <p class="canal-nombre">Correo</p>
+            <p class="canal-detalle">contacto@lamananeracafe.cl</p>
+          </div>
+          <span class="canal-arrow">→</span>
+        </a>
+
+        <a href="https://instagram.com/lamananeracafe" target="_blank" class="canal-card canal-ig">
+          <span class="canal-icon">📸</span>
+          <div>
+            <p class="canal-nombre">Instagram</p>
+            <p class="canal-detalle">@lamananeracafe</p>
+          </div>
+          <span class="canal-arrow">→</span>
+        </a>
+
+      </div>
+
+      <!-- FORMULARIO -->
+      <div class="contacto-form-wrap">
+        <h2 class="form-title">O déjanos un mensaje</h2>
+        <p class="form-sub">Te respondemos en menos de 24 horas.</p>
+
+        <div class="form-group">
+          <label class="form-label">Tu nombre</label>
+          <input type="text" class="form-input" placeholder="Ej: Martina González" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tu correo</label>
+          <input type="email" class="form-input" placeholder="Ej: martina@gmail.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mensaje</label>
+          <textarea class="form-input form-textarea" placeholder="¿En qué te podemos ayudar?"></textarea>
+        </div>
+        <button class="btn-primary form-submit" onclick="handleSubmit(this)">Enviar mensaje</button>
+        <p class="form-ok" id="formOk" style="display:none;">¡Mensaje enviado! Te escribimos pronto ☕</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">La <span>Mañanera</span></div>
+    <p class="footer-sub">Cerro Alegre 341 · Valparaíso · @lamananeracafe</p>
+  </footer>
+
+  <script>
+    function handleSubmit(btn) {
+      btn.style.display = 'none';
+      document.getElementById('formOk').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
