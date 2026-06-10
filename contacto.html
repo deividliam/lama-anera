@@ -69,20 +69,22 @@
         <h2 class="form-title">O déjanos un mensaje</h2>
         <p class="form-sub">Te respondemos en menos de 24 horas.</p>
 
-        <div class="form-group">
-          <label class="form-label">Tu nombre</label>
-          <input type="text" class="form-input" placeholder="Ej: David Liam" />
-        </div>
-        <div class="form-group">
-          <label class="form-label">Tu correo</label>
-          <input type="email" class="form-input" placeholder="Ej: david@gmail.com" />
-        </div>
-        <div class="form-group">
-          <label class="form-label">Mensaje</label>
-          <textarea class="form-input form-textarea" placeholder="¿En qué te podemos ayudar?"></textarea>
-        </div>
-        <button class="btn-primary form-submit" onclick="handleSubmit(this)">Enviar mensaje</button>
-        <p class="form-ok" id="formOk" style="display:none;">¡Mensaje enviado! Te escribimos pronto ☕</p>
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="nameInput">Tu nombre</label>
+            <input id="nameInput" name="name" type="text" class="form-input" placeholder="Ej: David Liam" required maxlength="60" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="emailInput">Tu correo</label>
+            <input id="emailInput" name="email" type="email" class="form-input" placeholder="Ej: david@gmail.com" required maxlength="80" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="messageInput">Mensaje</label>
+            <textarea id="messageInput" name="message" class="form-input form-textarea" placeholder="¿En qué te podemos ayudar?" required minlength="10" maxlength="500"></textarea>
+          </div>
+          <button id="submitBtn" type="submit" class="btn-primary form-submit">Enviar mensaje</button>
+          <p class="form-ok" id="formOk" role="status" aria-live="polite" style="display:none;">¡Mensaje enviado! Te escribimos pronto ☕</p>
+        </form>
       </div>
 
     </div>
@@ -94,10 +96,76 @@
   </footer>
 
   <script>
-    function handleSubmit(btn) {
-      btn.style.display = 'none';
-      document.getElementById('formOk').style.display = 'block';
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formOk = document.getElementById('formOk');
+    const nameInput = document.getElementById('nameInput');
+    const emailInput = document.getElementById('emailInput');
+    const messageInput = document.getElementById('messageInput');
+
+    const dangerousPattern = /<\s*script|<\s*iframe|<\s*object|<\s*embed|javascript:|on\w+\s*=|\balert\s*\(/i;
+
+    function sanitize(value) {
+      return String(value || '')
+        .replace(/[<>]/g, '')
+        .replace(/javascript:/gi, '')
+        .replace(/on\w+=/gi, '')
+        .trim();
     }
+
+    function validateForm() {
+      const rawName = nameInput.value;
+      const rawEmail = emailInput.value;
+      const rawMessage = messageInput.value;
+
+      if (dangerousPattern.test(rawName + rawEmail + rawMessage)) {
+        return 'No se permiten caracteres o scripts especiales.';
+      }
+
+      const name = sanitize(rawName);
+      const email = sanitize(rawEmail).toLowerCase();
+      const message = sanitize(rawMessage);
+
+      if (name.length < 2 || name.length > 60 || !/^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s.'-]+$/.test(name)) {
+        return 'Ingresa un nombre válido (solo letras y espacio).';
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return 'Ingresa un correo electrónico válido.';
+      }
+
+      if (message.length < 10 || message.length > 500) {
+        return 'El mensaje debe tener entre 10 y 500 caracteres.';
+      }
+
+      return '';
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const error = validateForm();
+      if (error) {
+        formOk.textContent = error;
+        formOk.classList.add('error');
+        formOk.style.display = 'block';
+        return;
+      }
+
+      formOk.classList.remove('error');
+      formOk.textContent = '¡Mensaje enviado! Te escribimos pronto ☕';
+      formOk.style.display = 'block';
+
+      form.reset();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviado';
+
+      window.setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar mensaje';
+        formOk.style.display = 'none';
+      }, 5000);
+    });
 
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
