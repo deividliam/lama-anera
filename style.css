@@ -58,9 +58,10 @@ a { text-decoration: none; }
   text-align: center;
   padding: 4rem 2rem;
   overflow: hidden;
+  background-color: #3a2a1a;
   background:
     linear-gradient(rgba(20, 12, 8, 0.68), rgba(20, 12, 8, 0.82)),
-    url('img/fondo.jpg') center/cover no-repeat;
+    url('img/fondo.webp') center/cover no-repeat;
 }
 
 .hero::before {
@@ -465,9 +466,10 @@ a { text-decoration: none; }
 
 .inner-hero {
   position: relative;
+  background-color: #3a2a1a;
   background:
     linear-gradient(rgba(20, 12, 8, 0.55), rgba(20, 12, 8, 0.72)),
-    url('img/fondo.jpg') center/cover no-repeat;
+    url('img/fondo.webp') center/cover no-repeat;
   padding: 3.5rem 2rem 3rem;
   text-align: center;
   overflow: hidden;
